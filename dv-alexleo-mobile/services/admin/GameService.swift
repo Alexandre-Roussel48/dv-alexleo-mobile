@@ -2,12 +2,8 @@ import Foundation
 import Combine
 
 class GameService {
-<<<<<<< Updated upstream
     private let baseURL = "\(Environment.baseURL)/admin/games"
     
-=======
-    private var baseURL : String = Environment.baseURL
->>>>>>> Stashed changes
     func fetchGames(query: String? = nil) -> AnyPublisher<[Game], Error> {
         var urlComponents = URLComponents(string: baseURL)!
         if let query = query {
