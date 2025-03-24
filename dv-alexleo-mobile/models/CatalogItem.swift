@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct CatalogItem: Identifiable, Codable {
-    var id = UUID()
+struct CatalogItem: Codable {
     let unitPrice: Double
     let quantity: Int
     let gameName: String

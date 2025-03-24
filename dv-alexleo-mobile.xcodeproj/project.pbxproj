@@ -10,7 +10,35 @@
 		B7841F432D916C0E001F986A /* dv_alexleo_mobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7841F422D916C0E001F986A /* dv_alexleo_mobileApp.swift */; };
 		B7841F452D916C0E001F986A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7841F442D916C0E001F986A /* ContentView.swift */; };
 		B7841F472D916C0F001F986A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7841F462D916C0F001F986A /* Assets.xcassets */; };
-		B7841F4A2D916C0F001F986A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7841F492D916C0F001F986A /* Preview Assets.xcassets */; };
+		F178B6682D916E9200A7BDD9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6462D916E9200A7BDD9 /* Game.swift */; };
+		F178B6692D916E9200A7BDD9 /* Realgame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6472D916E9200A7BDD9 /* Realgame.swift */; };
+		F178B66A2D916E9200A7BDD9 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B64D2D916E9200A7BDD9 /* GameService.swift */; };
+		F178B66B2D916E9200A7BDD9 /* DepositItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6452D916E9200A7BDD9 /* DepositItem.swift */; };
+		F178B66C2D916E9200A7BDD9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6492D916E9200A7BDD9 /* Transaction.swift */; };
+		F178B66D2D916E9200A7BDD9 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6572D916E9200A7BDD9 /* HomeService.swift */; };
+		F178B66E2D916E9200A7BDD9 /* SellerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6532D916E9200A7BDD9 /* SellerService.swift */; };
+		F178B66F2D916E9200A7BDD9 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6482D916E9200A7BDD9 /* Session.swift */; };
+		F178B6702D916E9200A7BDD9 /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6502D916E9200A7BDD9 /* BalanceService.swift */; };
+		F178B6712D916E9200A7BDD9 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B64C2D916E9200A7BDD9 /* ClientService.swift */; };
+		F178B6722D916E9200A7BDD9 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6542D916E9200A7BDD9 /* TransactionService.swift */; };
+		F178B6742D916E9200A7BDD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6652D916E9200A7BDD9 /* HomeView.swift */; };
+		F178B6752D916E9200A7BDD9 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6612D916E9200A7BDD9 /* AdminView.swift */; };
+		F178B6762D916E9200A7BDD9 /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6522D916E9200A7BDD9 /* SaleService.swift */; };
+		F178B6772D916E9200A7BDD9 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B64E2D916E9200A7BDD9 /* SessionService.swift */; };
+		F178B6782D916E9200A7BDD9 /* DepositService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6512D916E9200A7BDD9 /* DepositService.swift */; };
+		F178B6792D916E9200A7BDD9 /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B65A2D916E9200A7BDD9 /* AdminViewModel.swift */; };
+		F178B67A2D916E9200A7BDD9 /* CatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6432D916E9200A7BDD9 /* CatalogItem.swift */; };
+		F178B67B2D916E9200A7BDD9 /* GestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B65C2D916E9200A7BDD9 /* GestionViewModel.swift */; };
+		F178B67C2D916E9200A7BDD9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B65E2D916E9200A7BDD9 /* HomeViewModel.swift */; };
+		F178B67D2D916E9200A7BDD9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6442D916E9200A7BDD9 /* Client.swift */; };
+		F178B67E2D916E9200A7BDD9 /* GestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6632D916E9200A7BDD9 /* GestionView.swift */; };
+		F178B67F2D916E9200A7BDD9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6562D916E9200A7BDD9 /* AuthService.swift */; };
+		F178B6802D916E9200A7BDD9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6422D916E9200A7BDD9 /* Environment.swift */; };
+		F178B6832D91709400A7BDD9 /* ClientRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6822D91709400A7BDD9 /* ClientRegistration.swift */; };
+		F178B6872D9171F100A7BDD9 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6862D9171ED00A7BDD9 /* Status.swift */; };
+		F178B68B2D9173C300A7BDD9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B68A2D9173C300A7BDD9 /* TransactionType.swift */; };
+		F178B68D2D91741300A7BDD9 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B68C2D91741300A7BDD9 /* Role.swift */; };
+		F178B6972D91749800A7BDD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B6962D91749800A7BDD9 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +46,35 @@
 		B7841F422D916C0E001F986A /* dv_alexleo_mobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dv_alexleo_mobileApp.swift; sourceTree = "<group>"; };
 		B7841F442D916C0E001F986A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7841F462D916C0F001F986A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B7841F492D916C0F001F986A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F178B6422D916E9200A7BDD9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		F178B6432D916E9200A7BDD9 /* CatalogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItem.swift; sourceTree = "<group>"; };
+		F178B6442D916E9200A7BDD9 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		F178B6452D916E9200A7BDD9 /* DepositItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositItem.swift; sourceTree = "<group>"; };
+		F178B6462D916E9200A7BDD9 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F178B6472D916E9200A7BDD9 /* Realgame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realgame.swift; sourceTree = "<group>"; };
+		F178B6482D916E9200A7BDD9 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		F178B6492D916E9200A7BDD9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		F178B64C2D916E9200A7BDD9 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		F178B64D2D916E9200A7BDD9 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		F178B64E2D916E9200A7BDD9 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		F178B6502D916E9200A7BDD9 /* BalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceService.swift; sourceTree = "<group>"; };
+		F178B6512D916E9200A7BDD9 /* DepositService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositService.swift; sourceTree = "<group>"; };
+		F178B6522D916E9200A7BDD9 /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
+		F178B6532D916E9200A7BDD9 /* SellerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerService.swift; sourceTree = "<group>"; };
+		F178B6542D916E9200A7BDD9 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		F178B6562D916E9200A7BDD9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F178B6572D916E9200A7BDD9 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		F178B65A2D916E9200A7BDD9 /* AdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
+		F178B65C2D916E9200A7BDD9 /* GestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestionViewModel.swift; sourceTree = "<group>"; };
+		F178B65E2D916E9200A7BDD9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F178B6612D916E9200A7BDD9 /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		F178B6632D916E9200A7BDD9 /* GestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestionView.swift; sourceTree = "<group>"; };
+		F178B6652D916E9200A7BDD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F178B6822D91709400A7BDD9 /* ClientRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRegistration.swift; sourceTree = "<group>"; };
+		F178B6862D9171ED00A7BDD9 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		F178B68A2D9173C300A7BDD9 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		F178B68C2D91741300A7BDD9 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		F178B6962D91749800A7BDD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +107,160 @@
 		B7841F412D916C0E001F986A /* dv-alexleo-mobile */ = {
 			isa = PBXGroup;
 			children = (
+				F178B6812D916F5000A7BDD9 /* Preview Content */,
+				F178B6422D916E9200A7BDD9 /* Environment.swift */,
+				F178B64B2D916E9200A7BDD9 /* models */,
+				F178B6592D916E9200A7BDD9 /* services */,
+				F178B6602D916E9200A7BDD9 /* viewmodels */,
+				F178B6672D916E9200A7BDD9 /* views */,
 				B7841F422D916C0E001F986A /* dv_alexleo_mobileApp.swift */,
 				B7841F442D916C0E001F986A /* ContentView.swift */,
 				B7841F462D916C0F001F986A /* Assets.xcassets */,
-				B7841F482D916C0F001F986A /* Preview Content */,
 			);
 			path = "dv-alexleo-mobile";
 			sourceTree = "<group>";
 		};
-		B7841F482D916C0F001F986A /* Preview Content */ = {
+		F178B64B2D916E9200A7BDD9 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				B7841F492D916C0F001F986A /* Preview Assets.xcassets */,
+				F178B6962D91749800A7BDD9 /* User.swift */,
+				F178B6852D9171E100A7BDD9 /* enums */,
+				F178B6822D91709400A7BDD9 /* ClientRegistration.swift */,
+				F178B6432D916E9200A7BDD9 /* CatalogItem.swift */,
+				F178B6442D916E9200A7BDD9 /* Client.swift */,
+				F178B6452D916E9200A7BDD9 /* DepositItem.swift */,
+				F178B6462D916E9200A7BDD9 /* Game.swift */,
+				F178B6472D916E9200A7BDD9 /* Realgame.swift */,
+				F178B6482D916E9200A7BDD9 /* Session.swift */,
+				F178B6492D916E9200A7BDD9 /* Transaction.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F178B64F2D916E9200A7BDD9 /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				F178B64C2D916E9200A7BDD9 /* ClientService.swift */,
+				F178B64D2D916E9200A7BDD9 /* GameService.swift */,
+				F178B64E2D916E9200A7BDD9 /* SessionService.swift */,
+			);
+			path = admin;
+			sourceTree = "<group>";
+		};
+		F178B6552D916E9200A7BDD9 /* gestion */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6502D916E9200A7BDD9 /* BalanceService.swift */,
+				F178B6512D916E9200A7BDD9 /* DepositService.swift */,
+				F178B6522D916E9200A7BDD9 /* SaleService.swift */,
+				F178B6532D916E9200A7BDD9 /* SellerService.swift */,
+				F178B6542D916E9200A7BDD9 /* TransactionService.swift */,
+			);
+			path = gestion;
+			sourceTree = "<group>";
+		};
+		F178B6582D916E9200A7BDD9 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6562D916E9200A7BDD9 /* AuthService.swift */,
+				F178B6572D916E9200A7BDD9 /* HomeService.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		F178B6592D916E9200A7BDD9 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F178B64F2D916E9200A7BDD9 /* admin */,
+				F178B6552D916E9200A7BDD9 /* gestion */,
+				F178B6582D916E9200A7BDD9 /* shared */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		F178B65B2D916E9200A7BDD9 /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				F178B65A2D916E9200A7BDD9 /* AdminViewModel.swift */,
+			);
+			path = admin;
+			sourceTree = "<group>";
+		};
+		F178B65D2D916E9200A7BDD9 /* gestion */ = {
+			isa = PBXGroup;
+			children = (
+				F178B65C2D916E9200A7BDD9 /* GestionViewModel.swift */,
+			);
+			path = gestion;
+			sourceTree = "<group>";
+		};
+		F178B65F2D916E9200A7BDD9 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				F178B65E2D916E9200A7BDD9 /* HomeViewModel.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		F178B6602D916E9200A7BDD9 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				F178B65B2D916E9200A7BDD9 /* admin */,
+				F178B65D2D916E9200A7BDD9 /* gestion */,
+				F178B65F2D916E9200A7BDD9 /* shared */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		F178B6622D916E9200A7BDD9 /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6612D916E9200A7BDD9 /* AdminView.swift */,
+			);
+			path = admin;
+			sourceTree = "<group>";
+		};
+		F178B6642D916E9200A7BDD9 /* gestion */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6632D916E9200A7BDD9 /* GestionView.swift */,
+			);
+			path = gestion;
+			sourceTree = "<group>";
+		};
+		F178B6662D916E9200A7BDD9 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6652D916E9200A7BDD9 /* HomeView.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		F178B6672D916E9200A7BDD9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F178B6622D916E9200A7BDD9 /* admin */,
+				F178B6642D916E9200A7BDD9 /* gestion */,
+				F178B6662D916E9200A7BDD9 /* shared */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F178B6812D916F5000A7BDD9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F178B6852D9171E100A7BDD9 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				F178B68C2D91741300A7BDD9 /* Role.swift */,
+				F178B68A2D9173C300A7BDD9 /* TransactionType.swift */,
+				F178B6862D9171ED00A7BDD9 /* Status.swift */,
+			);
+			path = enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7841F4A2D916C0F001F986A /* Preview Assets.xcassets in Resources */,
 				B7841F472D916C0F001F986A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +333,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7841F452D916C0E001F986A /* ContentView.swift in Sources */,
+				F178B6682D916E9200A7BDD9 /* Game.swift in Sources */,
+				F178B6692D916E9200A7BDD9 /* Realgame.swift in Sources */,
+				F178B66A2D916E9200A7BDD9 /* GameService.swift in Sources */,
+				F178B6972D91749800A7BDD9 /* User.swift in Sources */,
+				F178B66B2D916E9200A7BDD9 /* DepositItem.swift in Sources */,
+				F178B66C2D916E9200A7BDD9 /* Transaction.swift in Sources */,
+				F178B66D2D916E9200A7BDD9 /* HomeService.swift in Sources */,
+				F178B66E2D916E9200A7BDD9 /* SellerService.swift in Sources */,
+				F178B66F2D916E9200A7BDD9 /* Session.swift in Sources */,
+				F178B6702D916E9200A7BDD9 /* BalanceService.swift in Sources */,
+				F178B6712D916E9200A7BDD9 /* ClientService.swift in Sources */,
+				F178B6722D916E9200A7BDD9 /* TransactionService.swift in Sources */,
+				F178B6832D91709400A7BDD9 /* ClientRegistration.swift in Sources */,
+				F178B6742D916E9200A7BDD9 /* HomeView.swift in Sources */,
+				F178B6752D916E9200A7BDD9 /* AdminView.swift in Sources */,
+				F178B68B2D9173C300A7BDD9 /* TransactionType.swift in Sources */,
+				F178B6762D916E9200A7BDD9 /* SaleService.swift in Sources */,
+				F178B6772D916E9200A7BDD9 /* SessionService.swift in Sources */,
+				F178B6872D9171F100A7BDD9 /* Status.swift in Sources */,
+				F178B6782D916E9200A7BDD9 /* DepositService.swift in Sources */,
+				F178B6792D916E9200A7BDD9 /* AdminViewModel.swift in Sources */,
+				F178B67A2D916E9200A7BDD9 /* CatalogItem.swift in Sources */,
+				F178B67B2D916E9200A7BDD9 /* GestionViewModel.swift in Sources */,
+				F178B67C2D916E9200A7BDD9 /* HomeViewModel.swift in Sources */,
+				F178B68D2D91741300A7BDD9 /* Role.swift in Sources */,
+				F178B67D2D916E9200A7BDD9 /* Client.swift in Sources */,
+				F178B67E2D916E9200A7BDD9 /* GestionView.swift in Sources */,
+				F178B67F2D916E9200A7BDD9 /* AuthService.swift in Sources */,
+				F178B6802D916E9200A7BDD9 /* Environment.swift in Sources */,
 				B7841F432D916C0E001F986A /* dv_alexleo_mobileApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
