@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Client: Identifiable, Codable {
+struct Client: Identifiable, Codable, Equatable {
     let id: Int64?
     let name: String
     let surname: String
