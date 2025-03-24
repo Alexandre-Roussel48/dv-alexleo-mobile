@@ -1,7 +1,15 @@
+//
+//  CatalogItem.swift
+//  dv-alexleo-mobile
+//
+//  Created by alexandre.roussel03 on 24/03/2025.
+//
+
+
 import Foundation
 
 struct CatalogItem: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let unitPrice: Double
     let quantity: Int
     let gameName: String
@@ -9,7 +17,6 @@ struct CatalogItem: Identifiable, Codable {
     let sellerName: String
     let sellerSurname: String
 
-    // Optional: Computed property for full seller name
     var sellerFullName: String {
         "\(sellerName) \(sellerSurname)"
     }
