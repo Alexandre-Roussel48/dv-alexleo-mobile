@@ -18,7 +18,7 @@ class GameService {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
+    /*
     func createGame(name: String, editor: String) -> AnyPublisher<Void, Error> {
         var request = URLRequest(url: URL(string: baseURL)!)
         request.httpMethod = "POST"
@@ -61,5 +61,5 @@ class GameService {
             .map { _ in () }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-    }
+    }*/
 }

@@ -2,7 +2,7 @@ import Foundation
 
 
 class HomeService {
-    private let baseURL = "http://votre-api.com/api/session"
+    private let baseURL = "\(Environment.baseURL)/session"
     
     func fetchCurrentSession(completion: @escaping (Result<Session?, Error>) -> Void) {
         guard let url = URL(string: baseURL) else {
@@ -29,7 +29,13 @@ class HomeService {
                 }
                 
                 do {
-                    let session = try JSONDecoder().decode(Session.self, from: data)
+                    let decoder = JSONDecoder()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    formatter.locale = Locale(identifier: "en_US_POSIX")
+                    decoder.dateDecodingStrategy = .formatted(formatter)
+
+                    let session = try decoder.decode(Session.self, from: data)
                     completion(.success(session))
                 } catch {
                     completion(.failure(error))

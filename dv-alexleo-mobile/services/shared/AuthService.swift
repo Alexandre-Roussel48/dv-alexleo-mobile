@@ -5,7 +5,7 @@ class AuthService {
     private let baseURL = "\(Environment.baseURL)/auth/login"
     
     func login(email: String, password: String) -> AnyPublisher<String, Error> {
-        let loginRequest = User(email: email, password: password)
+        let loginRequest = LoginRequest(email: email, password: password)
         
         guard let url = URL(string: baseURL) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()

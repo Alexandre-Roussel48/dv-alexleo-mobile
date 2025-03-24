@@ -36,15 +36,15 @@ struct SessionDetailView: View {
             Text("Session en cours")
                 .font(.title)
             
-            Text("Début : \(session.begin_date.formatted())")
-            Text("Fin : \(session.end_date.formatted())")
+            Text("Début : \(session.beginDate.formatted())")
+            Text("Fin : \(session.endDate.formatted())")
             Text("Commission : \(session.commission)%")
             Text("Frais : \(session.fees)€")
-            
+            /*
             Button("Supprimer la session") {
                 viewModel.deleteSession(id: session.id)
             }
-            .foregroundColor(.red)
+            .foregroundColor(.red)*/
         }
     }
 }

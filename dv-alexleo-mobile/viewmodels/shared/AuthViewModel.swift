@@ -1,11 +1,13 @@
 import Foundation
 import Combine
 
-class LoginViewModel: ObservableObject {
+class AuthViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
     @Published var isLoading = false
+    
+    @Published var isAuthenticated = false
     
     private let authService: AuthService
     private var cancellables = Set<AnyCancellable>()
@@ -30,8 +32,6 @@ class LoginViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { token in
-                // Stockez le token ici (par exemple, dans Keychain ou UserDefaults)
-                print("Token reçu : \(token)")
                 completion(true)
             }
             .store(in: &cancellables)

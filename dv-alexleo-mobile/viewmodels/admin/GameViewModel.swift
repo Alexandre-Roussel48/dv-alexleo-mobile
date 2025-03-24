@@ -30,7 +30,7 @@ class GameViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
+    /*
     func createGame(name: String, editor: String) {
         isLoading = true
         errorMessage = nil
@@ -80,5 +80,5 @@ class GameViewModel: ObservableObject {
                 self?.fetchGames()
             }
             .store(in: &cancellables)
-    }
+    }*/
 }

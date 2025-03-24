@@ -7,6 +7,7 @@
 import Foundation
 
 struct Session: Codable {
+    let id: Int64?
     let beginDate: Date
     let endDate: Date
     let commission: Double

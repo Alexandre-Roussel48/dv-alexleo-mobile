@@ -33,7 +33,6 @@ class ClientAuthViewModel: ObservableObject {
     private var searchCancellable: AnyCancellable?
     private var debounceTimer: Timer?
 
-    // MARK: - Register a client
     func registerClient() async {
         let registration = ClientRegistration(
             name: name,
@@ -51,7 +50,6 @@ class ClientAuthViewModel: ObservableObject {
         }
     }
 
-    // MARK: - Fetch matching clients
     private func fetchMatchingClients() {
         debounceTimer?.invalidate()
         guard !email.isEmpty else {

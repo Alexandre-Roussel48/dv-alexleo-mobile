@@ -9,11 +9,6 @@ import SwiftUI
 
 @main
 struct dv_alexleo_mobileApp: App {
-    init() {
-        let config = URLSessionConfiguration.default
-        config.protocolClasses = [AuthInterceptorURLProtocol.self] + (config.protocolClasses ?? [])
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()

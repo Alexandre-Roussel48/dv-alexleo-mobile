@@ -2,9 +2,10 @@ import Foundation
 import Combine
 
 class CatalogService {
+    private let baseURL = "\(Environment.baseURL)/catalog"
     
     func fetchCatalog(query: String?, minPrice: Int?, maxPrice: Int?) -> AnyPublisher<[Realgame], Error> {
-        var components = URLComponents(string: Environment.baseURL)!
+        var components = URLComponents(string: baseURL)!
         var queryItems: [URLQueryItem] = []
         
         if let query = query, !query.isEmpty {
