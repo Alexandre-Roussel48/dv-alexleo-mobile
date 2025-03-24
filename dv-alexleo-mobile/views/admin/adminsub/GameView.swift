@@ -95,7 +95,9 @@ struct EditGameView: View {
             TextField("Éditeur", text: $editor)
             
             Button("Enregistrer") {
-                viewModel.updateGame(id: game.id, name: name, editor: editor)
+                if let gameId = game.id {
+                    viewModel.updateGame(id: Int(gameId), name: name, editor: editor)
+                }
             }
         }
         .onAppear {

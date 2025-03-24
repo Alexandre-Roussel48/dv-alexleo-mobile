@@ -49,8 +49,8 @@ private struct ActiveSessionView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
             
-            SessionInfoRow(title: "Début", value: session.begin_date.formatted())
-                       SessionInfoRow(title: "Fin", value: session.end_date.formatted())
+            SessionInfoRow(title: "Début", value: session.beginDate.formatted())
+                       SessionInfoRow(title: "Fin", value: session.endDate.formatted())
                        SessionInfoRow(title: "Commission", value: "\(session.commission)%")
                        SessionInfoRow(title: "Frais", value: "\(session.fees) €")
             
@@ -106,25 +106,5 @@ struct SessionInfoRow: View {
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity)
-    }
-}
-
-struct ErrorView: View {
-    let error: String
-    
-    var body: some View {
-        VStack {
-            Image(systemName: "exclamationmark.triangle")
-                .font(.largeTitle)
-                .foregroundColor(.red)
-            
-            Text("Erreur de chargement")
-                .font(.headline)
-                .padding(.top)
-            
-            Text(error)
-                .foregroundColor(.secondary)
-                .padding()
-        }
     }
 }
