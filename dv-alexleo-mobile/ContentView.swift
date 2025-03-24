@@ -1,21 +1,29 @@
 //
 //  ContentView.swift
-//  dv-alexleo-mobile
+//  depot-vente-frontend-mobile
 //
-//  Created by etud on 24/03/2025.
+//  Created by etud on 06/03/2025.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State var presentSideMenu = false
+    @State var selectedSideMenuTab = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack{
+            
+        TabView(selection: $selectedSideMenuTab) {
+            HomeView(presentSideMenu: $presentSideMenu)
+                .tag(0)
+            LoginGestionView(presentSideMenu: $presentSideMenu)
+                .tag(1)
+            AdminView(presentSideMenu: $presentSideMenu)
+                .tag(2)
         }
-        .padding()
+        
+        SideMenu(isShowing: $presentSideMenu, content: AnyView(SideMenuView(selectedSideMenuTab: $selectedSideMenuTab, presentSideMenu: $presentSideMenu)))
+        }
     }
 }
 
