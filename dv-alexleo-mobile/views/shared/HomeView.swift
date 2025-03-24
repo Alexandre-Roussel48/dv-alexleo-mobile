@@ -51,8 +51,8 @@ private struct ActiveSessionView: View {
             
             SessionInfoRow(title: "Début", value: session.beginDate.formatted())
             SessionInfoRow(title: "Fin", value: session.endDate.formatted())
-            SessionInfoRow(title: "Commission", value: "\(session.commission)%")
-            SessionInfoRow(title: "Frais", value: "\(session.fees) €")
+            SessionInfoRow(title: "Commission", value: "\(session.commission) %")
+            SessionInfoRow(title: "Frais", value: "\(session.fees) %")
             
             Button(action: {}) {
                             Text("Accéder à la session")

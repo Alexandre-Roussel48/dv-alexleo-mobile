@@ -16,9 +16,7 @@ struct dv_alexleo_mobileApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //temporary
-            //ContentView()
-            DepositView()
+            ContentView()
         }
     }
 }

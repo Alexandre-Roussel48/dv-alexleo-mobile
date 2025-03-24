@@ -80,7 +80,7 @@ struct LoginGestionView: View {
             }
             .navigationDestination(for: String.self) { destination in
                 if destination == "HomepageView" {
-                    HomepageView(presentSideMenu: $presentSideMenu)
+                    HomeView(presentSideMenu: $presentSideMenu)
                 }
             }
         }
