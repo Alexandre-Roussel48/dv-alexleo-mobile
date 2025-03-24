@@ -1,13 +1,11 @@
 import Foundation
 import Combine
 
-
-
 class AuthService {
     private let baseURL = "\(Environment.baseURL)/auth/login"
     
     func login(email: String, password: String) -> AnyPublisher<String, Error> {
-        let loginRequest = LoginRequest(email: email, password: password)
+        let loginRequest = User(email: email, password: password)
         
         guard let url = URL(string: baseURL) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
@@ -26,6 +24,9 @@ class AuthService {
         return URLSession.shared.dataTaskPublisher(for: request)
             .map(\.data)
             .decode(type: LoginResponse.self, decoder: JSONDecoder())
+            .handleEvents(receiveOutput: { response in
+                AuthInterceptorURLProtocol.token = response.token
+            })
             .map { $0.token }
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
