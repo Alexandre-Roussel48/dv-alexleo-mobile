@@ -79,4 +79,20 @@ struct GameRow: View {
     }
 }
 
-
+struct ErrorView: View {
+    let error: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: "exclamationmark.triangle")
+                .font(.largeTitle)
+                .foregroundColor(.red)
+            Text("Erreur")
+                .font(.headline)
+            Text(error)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+        }
+        .padding()
+    }
+}

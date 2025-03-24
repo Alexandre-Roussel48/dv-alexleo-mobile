@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+<<<<<<< Updated upstream
     @State private var presentSideMenu = false
     @State private var selectedSideMenuTab = 0
     
@@ -55,6 +56,22 @@ struct ContentView: View {
                     )
                 )
             )
+=======
+    @State var presentSideMenu = false
+    @State var selectedSideMenuTab = 0
+    var body: some View {
+        ZStack{
+        TabView(selection: $selectedSideMenuTab) {
+            HomeView(presentSideMenu: $presentSideMenu)
+                .tag(0)
+            GestionView(presentSideMenu: $presentSideMenu)
+                .tag(1)
+            AdminView(presentSideMenu: $presentSideMenu)
+                .tag(2)
+        }
+        
+        SideMenu(isShowing: $presentSideMenu, content: AnyView(SideMenuView(selectedSideMenuTab: $selectedSideMenuTab, presentSideMenu: $presentSideMenu)))
+>>>>>>> Stashed changes
         }
     }
 }

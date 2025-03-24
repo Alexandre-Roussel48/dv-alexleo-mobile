@@ -35,7 +35,10 @@ struct GameView: View {
     private func deleteGame(at offsets: IndexSet) {
         for index in offsets {
             let game = viewModel.games[index]
-            viewModel.deleteGame(id: game.id)
+            if let gameId = game.id {
+                viewModel.deleteGame(id: Int(gameId))
+            }
+            
         }
     }
 }

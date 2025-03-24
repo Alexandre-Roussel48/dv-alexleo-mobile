@@ -2,8 +2,12 @@ import Foundation
 import Combine
 
 class GameService {
+<<<<<<< Updated upstream
     private let baseURL = "\(Environment.baseURL)/admin/games"
     
+=======
+    private var baseURL : String = Environment.baseURL
+>>>>>>> Stashed changes
     func fetchGames(query: String? = nil) -> AnyPublisher<[Game], Error> {
         var urlComponents = URLComponents(string: baseURL)!
         if let query = query {
@@ -29,10 +33,11 @@ class GameService {
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { _ in () }
+            .mapError { $0 as Error } // Conversion de URLError en Error
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
+
     func updateGame(id: Int, name: String?, editor: String?) -> AnyPublisher<Void, Error> {
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.queryItems = [URLQueryItem(name: "id", value: String(id))]
@@ -46,10 +51,11 @@ class GameService {
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { _ in () }
+            .mapError { $0 as Error } // Conversion de URLError en Error
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
+
     func deleteGame(id: Int) -> AnyPublisher<Void, Error> {
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.queryItems = [URLQueryItem(name: "id", value: String(id))]
@@ -59,6 +65,7 @@ class GameService {
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { _ in () }
+            .mapError { $0 as Error } // Conversion de URLError en Error
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }*/

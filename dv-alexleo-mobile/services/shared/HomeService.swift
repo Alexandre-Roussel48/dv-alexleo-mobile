@@ -2,7 +2,11 @@ import Foundation
 
 
 class HomeService {
+<<<<<<< Updated upstream
     private let baseURL = "\(Environment.baseURL)/session"
+=======
+    private let baseURL = Environment.baseURL
+>>>>>>> Stashed changes
     
     func fetchCurrentSession(completion: @escaping (Result<Session?, Error>) -> Void) {
         guard let url = URL(string: baseURL) else {

@@ -44,7 +44,12 @@ struct SessionDetailView: View {
             Button("Supprimer la session") {
                 viewModel.deleteSession(id: session.id)
             }
+<<<<<<< Updated upstream
             .foregroundColor(.red)*/
+=======
+            .foregroundColor(.red)
+             */
+>>>>>>> Stashed changes
         }
     }
 }
