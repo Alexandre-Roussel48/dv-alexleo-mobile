@@ -3,56 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		F178B4E72D915A1D00A7BDD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F178B4CE2D915A1C00A7BDD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F178B4D52D915A1C00A7BDD9;
-			remoteInfo = "dv-alexleo-mobile";
-		};
-		F178B4F12D915A1D00A7BDD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F178B4CE2D915A1C00A7BDD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F178B4D52D915A1C00A7BDD9;
-			remoteInfo = "dv-alexleo-mobile";
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		B7841F292D9166E0001F986A /* dv_alexleo_mobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7841F282D9166E0001F986A /* dv_alexleo_mobileApp.swift */; };
+		B7841F2B2D9166E0001F986A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7841F2A2D9166E0001F986A /* ContentView.swift */; };
+		B7841F2D2D9166E2001F986A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7841F2C2D9166E2001F986A /* Assets.xcassets */; };
+		B7841F302D9166E2001F986A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7841F2F2D9166E2001F986A /* Preview Assets.xcassets */; };
+		F178B62E2D9168E900A7BDD9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178B5FF2D9168E900A7BDD9 /* Environment.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F178B5682D9161A700A7BDD9 /* dv-alexleo-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dv-alexleo-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F178B5692D9161A700A7BDD9 /* dv-alexleo-mobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dv-alexleo-mobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F178B56A2D9161A700A7BDD9 /* dv-alexleo-mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dv-alexleo-mobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7841F252D9166E0001F986A /* dv-alexleo-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dv-alexleo-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7841F282D9166E0001F986A /* dv_alexleo_mobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dv_alexleo_mobileApp.swift; sourceTree = "<group>"; };
+		B7841F2A2D9166E0001F986A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B7841F2C2D9166E2001F986A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7841F2F2D9166E2001F986A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F178B5FF2D9168E900A7BDD9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F178B4D82D915A1C00A7BDD9 /* dv-alexleo-mobile */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "dv-alexleo-mobile";
-			sourceTree = "<group>";
-		};
+		F178B6092D9168E900A7BDD9 /* models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = models; sourceTree = "<group>"; };
+		F178B60B2D9168E900A7BDD9 /* Preview Content */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Preview Content"; sourceTree = "<group>"; };
+		F178B6192D9168E900A7BDD9 /* services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = services; sourceTree = "<group>"; };
+		F178B6202D9168E900A7BDD9 /* viewmodels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = viewmodels; sourceTree = "<group>"; };
+		F178B6272D9168E900A7BDD9 /* views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = views; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F178B4D32D915A1C00A7BDD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4E32D915A1D00A7BDD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4ED2D915A1D00A7BDD9 /* Frameworks */ = {
+		B7841F222D9166E0001F986A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,192 +42,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F178B4CD2D915A1C00A7BDD9 = {
+		B7841F1C2D9166E0001F986A = {
 			isa = PBXGroup;
 			children = (
-				F178B4D82D915A1C00A7BDD9 /* dv-alexleo-mobile */,
-				F178B5682D9161A700A7BDD9 /* dv-alexleo-mobile.app */,
-				F178B5692D9161A700A7BDD9 /* dv-alexleo-mobileTests.xctest */,
-				F178B56A2D9161A700A7BDD9 /* dv-alexleo-mobileUITests.xctest */,
+				B7841F272D9166E0001F986A /* dv-alexleo-mobile */,
+				B7841F262D9166E0001F986A /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		B7841F262D9166E0001F986A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7841F252D9166E0001F986A /* dv-alexleo-mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7841F272D9166E0001F986A /* dv-alexleo-mobile */ = {
+			isa = PBXGroup;
+			children = (
+				F178B5FF2D9168E900A7BDD9 /* Environment.swift */,
+				F178B6092D9168E900A7BDD9 /* models */,
+				F178B60B2D9168E900A7BDD9 /* Preview Content */,
+				F178B6192D9168E900A7BDD9 /* services */,
+				F178B6202D9168E900A7BDD9 /* viewmodels */,
+				F178B6272D9168E900A7BDD9 /* views */,
+				B7841F282D9166E0001F986A /* dv_alexleo_mobileApp.swift */,
+				B7841F2A2D9166E0001F986A /* ContentView.swift */,
+				B7841F2C2D9166E2001F986A /* Assets.xcassets */,
+				B7841F2E2D9166E2001F986A /* Preview Content */,
+			);
+			path = "dv-alexleo-mobile";
+			sourceTree = "<group>";
+		};
+		B7841F2E2D9166E2001F986A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B7841F2F2D9166E2001F986A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F178B4D52D915A1C00A7BDD9 /* dv-alexleo-mobile */ = {
+		B7841F242D9166E0001F986A /* dv-alexleo-mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F178B4FA2D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobile" */;
+			buildConfigurationList = B7841F332D9166E2001F986A /* Build configuration list for PBXNativeTarget "dv-alexleo-mobile" */;
 			buildPhases = (
-				F178B4D22D915A1C00A7BDD9 /* Sources */,
-				F178B4D32D915A1C00A7BDD9 /* Frameworks */,
-				F178B4D42D915A1C00A7BDD9 /* Resources */,
+				B7841F212D9166E0001F986A /* Sources */,
+				B7841F222D9166E0001F986A /* Frameworks */,
+				B7841F232D9166E0001F986A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F178B4D82D915A1C00A7BDD9 /* dv-alexleo-mobile */,
+				F178B6092D9168E900A7BDD9 /* models */,
+				F178B60B2D9168E900A7BDD9 /* Preview Content */,
+				F178B6192D9168E900A7BDD9 /* services */,
+				F178B6202D9168E900A7BDD9 /* viewmodels */,
+				F178B6272D9168E900A7BDD9 /* views */,
 			);
 			name = "dv-alexleo-mobile";
-			packageProductDependencies = (
-			);
 			productName = "dv-alexleo-mobile";
-			productReference = F178B5682D9161A700A7BDD9 /* dv-alexleo-mobile.app */;
+			productReference = B7841F252D9166E0001F986A /* dv-alexleo-mobile.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F178B4E52D915A1D00A7BDD9 /* dv-alexleo-mobileTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F178B4FD2D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobileTests" */;
-			buildPhases = (
-				F178B4E22D915A1D00A7BDD9 /* Sources */,
-				F178B4E32D915A1D00A7BDD9 /* Frameworks */,
-				F178B4E42D915A1D00A7BDD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F178B4E82D915A1D00A7BDD9 /* PBXTargetDependency */,
-			);
-			name = "dv-alexleo-mobileTests";
-			packageProductDependencies = (
-			);
-			productName = "dv-alexleo-mobileTests";
-			productReference = F178B5692D9161A700A7BDD9 /* dv-alexleo-mobileTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F178B4EF2D915A1D00A7BDD9 /* dv-alexleo-mobileUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F178B5002D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobileUITests" */;
-			buildPhases = (
-				F178B4EC2D915A1D00A7BDD9 /* Sources */,
-				F178B4ED2D915A1D00A7BDD9 /* Frameworks */,
-				F178B4EE2D915A1D00A7BDD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F178B4F22D915A1D00A7BDD9 /* PBXTargetDependency */,
-			);
-			name = "dv-alexleo-mobileUITests";
-			packageProductDependencies = (
-			);
-			productName = "dv-alexleo-mobileUITests";
-			productReference = F178B56A2D9161A700A7BDD9 /* dv-alexleo-mobileUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F178B4CE2D915A1C00A7BDD9 /* Project object */ = {
+		B7841F1D2D9166E0001F986A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					F178B4D52D915A1C00A7BDD9 = {
-						CreatedOnToolsVersion = 16.1;
-					};
-					F178B4E52D915A1D00A7BDD9 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = F178B4D52D915A1C00A7BDD9;
-					};
-					F178B4EF2D915A1D00A7BDD9 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = F178B4D52D915A1C00A7BDD9;
+					B7841F242D9166E0001F986A = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = F178B4D12D915A1C00A7BDD9 /* Build configuration list for PBXProject "dv-alexleo-mobile" */;
+			buildConfigurationList = B7841F202D9166E0001F986A /* Build configuration list for PBXProject "dv-alexleo-mobile" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = F178B4CD2D915A1C00A7BDD9;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = F178B4CD2D915A1C00A7BDD9;
+			mainGroup = B7841F1C2D9166E0001F986A;
+			productRefGroup = B7841F262D9166E0001F986A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F178B4D52D915A1C00A7BDD9 /* dv-alexleo-mobile */,
-				F178B4E52D915A1D00A7BDD9 /* dv-alexleo-mobileTests */,
-				F178B4EF2D915A1D00A7BDD9 /* dv-alexleo-mobileUITests */,
+				B7841F242D9166E0001F986A /* dv-alexleo-mobile */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F178B4D42D915A1C00A7BDD9 /* Resources */ = {
+		B7841F232D9166E0001F986A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4E42D915A1D00A7BDD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4EE2D915A1D00A7BDD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B7841F302D9166E2001F986A /* Preview Assets.xcassets in Resources */,
+				B7841F2D2D9166E2001F986A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F178B4D22D915A1C00A7BDD9 /* Sources */ = {
+		B7841F212D9166E0001F986A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4E22D915A1D00A7BDD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178B4EC2D915A1D00A7BDD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B7841F2B2D9166E0001F986A /* ContentView.swift in Sources */,
+				B7841F292D9166E0001F986A /* dv_alexleo_mobileApp.swift in Sources */,
+				F178B62E2D9168E900A7BDD9 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F178B4E82D915A1D00A7BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F178B4D52D915A1C00A7BDD9 /* dv-alexleo-mobile */;
-			targetProxy = F178B4E72D915A1D00A7BDD9 /* PBXContainerItemProxy */;
-		};
-		F178B4F22D915A1D00A7BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F178B4D52D915A1C00A7BDD9 /* dv-alexleo-mobile */;
-			targetProxy = F178B4F12D915A1D00A7BDD9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		F178B4F82D915A1D00A7BDD9 /* Debug */ = {
+		B7841F312D9166E2001F986A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -280,8 +205,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -295,22 +219,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		F178B4F92D915A1D00A7BDD9 /* Release */ = {
+		B7841F322D9166E2001F986A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -343,8 +265,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -352,17 +273,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F178B4FB2D915A1D00A7BDD9 /* Debug */ = {
+		B7841F342D9166E2001F986A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -390,7 +311,7 @@
 			};
 			name = Debug;
 		};
-		F178B4FC2D915A1D00A7BDD9 /* Release */ = {
+		B7841F352D9166E2001F986A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -415,117 +336,31 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		F178B4FE2D915A1D00A7BDD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igdevx.dv-alexleo-mobileTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dv-alexleo-mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dv-alexleo-mobile";
-			};
-			name = Debug;
-		};
-		F178B4FF2D915A1D00A7BDD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igdevx.dv-alexleo-mobileTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dv-alexleo-mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dv-alexleo-mobile";
-			};
-			name = Release;
-		};
-		F178B5012D915A1D00A7BDD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igdevx.dv-alexleo-mobileUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "dv-alexleo-mobile";
-			};
-			name = Debug;
-		};
-		F178B5022D915A1D00A7BDD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igdevx.dv-alexleo-mobileUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "dv-alexleo-mobile";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F178B4D12D915A1C00A7BDD9 /* Build configuration list for PBXProject "dv-alexleo-mobile" */ = {
+		B7841F202D9166E0001F986A /* Build configuration list for PBXProject "dv-alexleo-mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F178B4F82D915A1D00A7BDD9 /* Debug */,
-				F178B4F92D915A1D00A7BDD9 /* Release */,
+				B7841F312D9166E2001F986A /* Debug */,
+				B7841F322D9166E2001F986A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F178B4FA2D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobile" */ = {
+		B7841F332D9166E2001F986A /* Build configuration list for PBXNativeTarget "dv-alexleo-mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F178B4FB2D915A1D00A7BDD9 /* Debug */,
-				F178B4FC2D915A1D00A7BDD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F178B4FD2D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobileTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F178B4FE2D915A1D00A7BDD9 /* Debug */,
-				F178B4FF2D915A1D00A7BDD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F178B5002D915A1D00A7BDD9 /* Build configuration list for PBXNativeTarget "dv-alexleo-mobileUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F178B5012D915A1D00A7BDD9 /* Debug */,
-				F178B5022D915A1D00A7BDD9 /* Release */,
+				B7841F342D9166E2001F986A /* Debug */,
+				B7841F352D9166E2001F986A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F178B4CE2D915A1C00A7BDD9 /* Project object */;
+	rootObject = B7841F1D2D9166E0001F986A /* Project object */;
 }
