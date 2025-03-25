@@ -66,4 +66,6 @@ class AuthInterceptorURLProtocol: URLProtocol {
 
         task.resume()
     }
+    
+    override func stopLoading() {}
 }

@@ -35,7 +35,7 @@ struct GameView: View {
     private func deleteGame(at offsets: IndexSet) {
         for index in offsets {
             let game = viewModel.games[index]
-            viewModel.deleteGame(id: game.id)
+            //viewModel.deleteGame(id: game.id)
         }
     }
 }
@@ -76,7 +76,7 @@ struct CreateGameView: View {
             TextField("Éditeur", text: $editor)
             
             Button("Créer") {
-                viewModel.createGame(name: name, editor: editor)
+                //viewModel.createGame(name: name, editor: editor)
             }
         }
         .navigationTitle("Nouveau jeu")
@@ -95,7 +95,7 @@ struct EditGameView: View {
             TextField("Éditeur", text: $editor)
             
             Button("Enregistrer") {
-                viewModel.updateGame(id: game.id, name: name, editor: editor)
+                //viewModel.updateGame(id: game.id, name: name, editor: editor)
             }
         }
         .onAppear {

@@ -25,7 +25,7 @@ struct ClientView: View {
                             }
                             .swipeActions {
                                 Button("Supprimer", role: .destructive) {
-                                    viewModel.deleteClient(id: client.id)
+                                    //viewModel.deleteClient(id: client.id)
                                 }
                             }
                         }
