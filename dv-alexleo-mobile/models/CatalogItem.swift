@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CatalogItem: Codable {
+struct CatalogItem: Codable, Identifiable {
     let unitPrice: Double
     let quantity: Int
     let gameName: String
@@ -19,4 +19,6 @@ struct CatalogItem: Codable {
     var sellerFullName: String {
         "\(sellerName) \(sellerSurname)"
     }
+    
+    var id: String { "\(gameName)-\(gameEditor)-\(sellerName)-\(sellerSurname)-\(unitPrice)" }
 }

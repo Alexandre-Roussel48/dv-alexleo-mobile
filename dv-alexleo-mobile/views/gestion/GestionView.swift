@@ -51,7 +51,6 @@ struct GestionView: View {
 }
 
 
-struct SalesView: View { var body: some View { Text("Sales Content") } }
 struct TreasuryView: View { var body: some View { Text("Treasury Content") } }
 struct SellersInfoView: View { var body: some View { Text("Sellers Info") } }
 struct StocksView: View { var body: some View { Text("Stocks Content") } }

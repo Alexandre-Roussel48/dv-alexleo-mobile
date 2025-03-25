@@ -1,55 +1,43 @@
 import Foundation
+import SwiftUI
 import Combine
 
+@MainActor
 class CatalogViewModel: ObservableObject {
-    @Published var searchText: String = ""
-    @Published var games: [Realgame] = []
+    @Published var searchText: String = "" {
+        didSet { fetchMatchingCatalog() }
+    }
+    @Published var games: [CatalogItem] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
-    
     @Published var priceRange: ClosedRange<Float> = 0...100
-    private var cancellables = Set<AnyCancellable>()
-    private let catalogService: CatalogService
-    
-    init(service: CatalogService = CatalogService()) {
-        self.catalogService = service
-        setupBindings()
+
+    private let catalogService: CatalogService = CatalogService()
+    private var searchCancellable: AnyCancellable?
+    private var debounceTimer: Timer?
+
+    init() {
+        fetchMatchingCatalog()
     }
     
-    private func setupBindings() {
-        $searchText
-            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                self?.fetchCatalog()
+    func fetchMatchingCatalog() {
+        debounceTimer?.invalidate()
+        debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
+            Task {
+                await self?.searchCatalog()
             }
-            .store(in: &cancellables)
-    }
-    
-    func fetchCatalog() {
-        isLoading = true
-        errorMessage = nil
-    
-        let minPrice = max(0, Int(priceRange.lowerBound))
-        let maxPrice = max(minPrice, Int(priceRange.upperBound))
-        
-        catalogService.fetchCatalog(
-            query: searchText.isEmpty ? nil : searchText,
-            minPrice: minPrice,
-            maxPrice: maxPrice
-        )
-        .receive(on: DispatchQueue.main)
-        .sink { [weak self] completion in
-            self?.isLoading = false
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                self?.errorMessage = error.localizedDescription
-            }
-        } receiveValue: { [weak self] games in
-            self?.games = games
         }
-        .store(in: &cancellables)
+    }
+
+    private func searchCatalog() async {
+        do {
+            let minPrice = max(0, Int(priceRange.lowerBound))
+            let maxPrice = max(minPrice, Int(priceRange.upperBound))
+            let results = try await catalogService.fetchCatalog(query: searchText, minPrice: minPrice, maxPrice: maxPrice)
+            games = results
+        } catch {
+            games = []
+            print("Fetch error: \(error)")
+        }
     }
 }
