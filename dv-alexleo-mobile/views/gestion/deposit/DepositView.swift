@@ -7,10 +7,18 @@
 import SwiftUI
 
 struct DepositView: View {
+    @StateObject private var clientAuthViewModel = ClientAuthViewModel()
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        VStack{
-            Group {
-                ClientAuthView()
+        NavigationStack(path: $path) {
+            ClientAuthView(viewModel: clientAuthViewModel) {
+                if let client = clientAuthViewModel.selectedClient {
+                    path.append(client)
+                }
+            }
+            .navigationDestination(for: Client.self) { client in
+                DepositFormView(client: client)
             }
         }
     }

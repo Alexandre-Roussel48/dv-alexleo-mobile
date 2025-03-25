@@ -12,14 +12,14 @@ struct ScreenWrapper<Content: View>: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
-                // Main content, padded to avoid overlap
-                VStack {
+                // Main content below the menu button
+                VStack(spacing: 0) {
+                    Spacer().frame(height: geometry.safeAreaInsets.top + 56) // leave space for button
                     content
                 }
-                .padding(.top, 72) // spacing below menu icon
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                // Menu icon — respects safe area
+                // Floating menu button
                 HStack {
                     Button {
                         presentSideMenu.toggle()
@@ -30,10 +30,10 @@ struct ScreenWrapper<Content: View>: View {
                     }
                     Spacer()
                 }
+                .padding(.top, geometry.safeAreaInsets.top + 12)
                 .padding(.horizontal, 24)
-                .padding(.top, geometry.safeAreaInsets.top + 12) // dynamic top padding
             }
-            .ignoresSafeArea(edges: .top)
+            .edgesIgnoringSafeArea(.top) // let button go into safe area, but not the content
         }
     }
 }

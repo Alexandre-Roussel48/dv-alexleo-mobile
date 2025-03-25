@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ClientAuthView: View {
-    @StateObject private var viewModel = ClientAuthViewModel()
+    @ObservedObject var viewModel: ClientAuthViewModel
+    var onTermine: () -> Void
     
     @ViewBuilder
     private var matchingClientList: some View {
@@ -68,6 +69,7 @@ struct ClientAuthView: View {
                                     await viewModel.registerClient()
                                 }
                             }
+                            onTermine()
                         }) {
                             Text(viewModel.isRegistering ? "Créer compte" : "Sélectionner")
                                 .foregroundColor(.white)
