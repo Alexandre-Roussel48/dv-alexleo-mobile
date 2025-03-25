@@ -1,68 +1,74 @@
 import Foundation
-import Combine
 
 class GameService {
-    private let baseURL = "\(Environment.baseURL)/admin/games"
+    let session: URLSession
     
-    func fetchGames(query: String? = nil) -> AnyPublisher<[Game], Error> {
-        var urlComponents = URLComponents(string: baseURL)!
+    private let baseURL = "\(Environment.baseURL)/admin/games"
+    private let gestionURL = "\(Environment.baseURL)/gestion/games"
+
+    init(session: URLSession = APIService.shared.session) {
+        self.session = session
+    }
+    
+    func fetchGames(query: String? = nil) async throws -> [Game] {
+        
+        var urlComponents = URLComponents(string: gestionURL)!
         if let query = query {
             urlComponents.queryItems = [URLQueryItem(name: "query", value: query)]
         }
-        
-        let request = URLRequest(url: urlComponents.url!)
-        
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map { $0.data }
-            .decode(type: [Game].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+
+        guard let url = urlComponents.url else {
+            throw URLError(.badURL)
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (data, _) = try await session.data(for: request)
+        return try JSONDecoder().decode([Game].self, from: data)
     }
-    /*
-    func createGame(name: String, editor: String) -> AnyPublisher<Void, Error> {
-        var request = URLRequest(url: URL(string: baseURL)!)
+    
+    func createGame(name: String, editor: String) async throws -> Void {
+        guard let url = URL(string: baseURL) else {
+            throw URLError(.badURL)
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body = ["name": name, "editor": editor]
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map { _ in () }
-            .mapError { $0 as Error } // Conversion de URLError en Error
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
+        request.httpBody = try JSONEncoder().encode(["name": name, "editor": editor])
 
-    func updateGame(id: Int, name: String?, editor: String?) -> AnyPublisher<Void, Error> {
+        _ = try await session.data(for: request)
+    }
+    
+    func updateGame(id: Int, name: String?, editor: String?) async throws -> Void {
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.queryItems = [URLQueryItem(name: "id", value: String(id))]
         
-        var request = URLRequest(url: urlComponents.url!)
+        guard let url = urlComponents.url else {
+            throw URLError(.badURL)
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body: [String: String?] = ["name": name, "editor": editor]
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map { _ in () }
-            .mapError { $0 as Error } // Conversion de URLError en Error
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
+        request.httpBody = try JSONEncoder().encode(["name": name, "editor": editor])
 
-    func deleteGame(id: Int) -> AnyPublisher<Void, Error> {
+        _ = try await session.data(for: request)
+    }
+    
+    func deleteGame(id: Int) async throws -> Void {
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.queryItems = [URLQueryItem(name: "id", value: String(id))]
         
-        var request = URLRequest(url: urlComponents.url!)
-        request.httpMethod = "DELETE"
+        guard let url = urlComponents.url else {
+            throw URLError(.badURL)
+        }
         
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map { _ in () }
-            .mapError { $0 as Error } // Conversion de URLError en Error
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }*/
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+
+        _ = try await session.data(for: request)
+    }
 }

@@ -8,6 +8,7 @@ class ClientViewModel: ObservableObject {
     @Published var searchText = ""
     
     private let clientService: ClientService
+    private var searchTask: Task<Void, Never>?
     private var cancellables = Set<AnyCancellable>()
     
     init(service: ClientService = ClientService()) {
@@ -20,42 +21,45 @@ class ClientViewModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { [weak self] _ in
-                self?.fetchClients()
+                // Wrap the call in a Task to bridge to MainActor
+                Task { [weak self] in
+                    await self?.fetchClients()
+                }
             }
             .store(in: &cancellables)
     }
     
-    func fetchClients() {
-        isLoading = true
-        errorMessage = nil
-        
-        clientService.fetchClients(email: searchText.isEmpty ? nil : searchText)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
+    @MainActor
+    func fetchClients() async {  // Made this async
+        searchTask?.cancel()
+        searchTask = Task { @MainActor in
+            isLoading = true
+            errorMessage = nil
+            
+            do {
+                clients = try await clientService.fetchClients(email: searchText.isEmpty ? nil : searchText)
+            } catch {
+                if !Task.isCancelled {
+                    errorMessage = error.localizedDescription
                 }
-            } receiveValue: { [weak self] clients in
-                self?.clients = clients
             }
-            .store(in: &cancellables)
+            
+            isLoading = false
+        }
     }
     
-    func deleteClient(id: Int) {
+    @MainActor
+    func deleteClient(id: Int) async {
         isLoading = true
         errorMessage = nil
         
-        clientService.deleteClient(id: id)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
-                }
-            } receiveValue: { [weak self] in
-                self?.fetchClients()
-            }
-            .store(in: &cancellables)
+        do {
+            try await clientService.deleteClient(id: id)
+            await fetchClients()  // Now properly awaited
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        
+        isLoading = false
     }
 }

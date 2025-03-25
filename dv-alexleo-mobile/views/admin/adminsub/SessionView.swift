@@ -24,6 +24,9 @@ struct SessionView: View {
         }
         .padding()
         .navigationTitle("Gestion des sessions")
+        .onAppear{
+            viewModel.fetchCurrentSession()
+        }
     }
 }
 
@@ -38,19 +41,21 @@ struct SessionDetailView: View {
             
             Text("Début : \(session.beginDate.formatted())")
             Text("Fin : \(session.endDate.formatted())")
-            Text("Commission : \(session.commission)%")
-            Text("Frais : \(session.fees)€")
-            /*
+            Text("Commission : \(session.commission, specifier: "%.1f")%")
+            Text("Frais : \(session.fees , specifier: "%.1f")%")
+            
             Button("Supprimer la session") {
-                viewModel.deleteSession(id: session.id)
+                Task {
+                    await viewModel.deleteSession()
+                }
             }
-            .foregroundColor(.red)*/
+            .foregroundColor(.red)
         }
     }
 }
 
 struct CreateSessionView: View {
-    @ObservedObject var viewModel: SessionViewModel
+    @ObservedObject var viewModel : SessionViewModel
     @State private var beginDate = Date()
     @State private var endDate = Date()
     @State private var commission = 10
@@ -60,13 +65,36 @@ struct CreateSessionView: View {
         Form {
             DatePicker("Date de début", selection: $beginDate)
             DatePicker("Date de fin", selection: $endDate)
-            Stepper("Commission : \(commission)%", value: $commission, in: 0...100)
-            Stepper("Frais : \(fees)€", value: $fees, in: 0...100)
             
-            Button("Créer") {
-                viewModel.createSession(beginDate: beginDate, endDate: endDate, commission: commission, fees: fees)
+            TextField("Commission (%)", value: $commission, format: .number)
+                .keyboardType(.numberPad)
+            
+            TextField("Frais (%)", value: $fees, format: .number)
+                .keyboardType(.numberPad)
+            
+            Button {
+                Task {
+                    await viewModel.createSession(
+                        beginDate: beginDate,
+                        endDate: endDate,
+                        commission: Double(commission),
+                        fees: Double(fees)
+                    )
+                }
+            } label: {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    Text("Créer la session")
+                }
             }
+            .disabled(viewModel.isLoading)
         }
-        .navigationTitle("Nouvelle session")
+        .alert("Erreur",
+               isPresented: .constant(viewModel.errorMessage != nil)) {
+            Button("OK") { viewModel.errorMessage = nil }
+        } message: {
+            Text(viewModel.errorMessage ?? "")
+        }
     }
 }

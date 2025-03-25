@@ -25,9 +25,11 @@ struct ClientView: View {
                             }
                             .swipeActions {
                                 Button("Supprimer", role: .destructive) {
-
-                                    //viewModel.deleteClient(id: client.id)
-                                    
+                                    Task {
+                                        if let clientId = client.id {
+                                            await viewModel.deleteClient(id: Int(clientId))
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 class GameViewModel: ObservableObject {
     @Published var games: [Game] = []
@@ -7,78 +6,75 @@ class GameViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     private let gameService: GameService
-    private var cancellables = Set<AnyCancellable>()
     
     init(service: GameService = GameService()) {
         self.gameService = service
-        fetchGames()
+        Task {
+            await fetchGames()
+        }
     }
     
-    func fetchGames(query: String? = nil) {
+    @MainActor
+    func fetchGames(query: String? = nil) async {
         isLoading = true
         errorMessage = nil
         
-        gameService.fetchGames(query: query)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
-                }
-            } receiveValue: { [weak self] games in
-                self?.games = games
-            }
-            .store(in: &cancellables)
-    }
-    /*
-    func createGame(name: String, editor: String) {
-        isLoading = true
-        errorMessage = nil
+        do {
+            games = try await gameService.fetchGames(query: query)
+            print("jeux: \(games)")
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Erreur fetchGames: \(error)")
+        }
         
-        gameService.createGame(name: name, editor: editor)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
-                }
-            } receiveValue: { [weak self] in
-                self?.fetchGames()
-            }
-            .store(in: &cancellables)
+        isLoading = false
     }
     
-    func updateGame(id: Int, name: String?, editor: String?) {
+    @MainActor
+    func createGame(name: String, editor: String) async {
         isLoading = true
         errorMessage = nil
         
-        gameService.updateGame(id: id, name: name, editor: editor)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
-                }
-            } receiveValue: { [weak self] in
-                self?.fetchGames()
-            }
-            .store(in: &cancellables)
+        do {
+            try await gameService.createGame(name: name, editor: editor)
+            await fetchGames()
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Erreur createGame: \(error)")
+        }
+        
+        isLoading = false
     }
     
-    func deleteGame(id: Int) {
+    @MainActor
+    func updateGame(id: Int, name: String?, editor: String?) async {
         isLoading = true
         errorMessage = nil
         
-        gameService.deleteGame(id: id)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                if case .failure(let error) = completion {
-                    self?.errorMessage = error.localizedDescription
-                }
-            } receiveValue: { [weak self] in
-                self?.fetchGames()
-            }
-            .store(in: &cancellables)
-    }*/
+        do {
+            try await gameService.updateGame(id: id, name: name, editor: editor)
+            await fetchGames()
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Erreur updateGame: \(error)")
+        }
+        
+        isLoading = false
+    }
+    
+    @MainActor
+    func deleteGame(id: Int) async {
+        isLoading = true
+        errorMessage = nil
+        
+        do {
+            try await gameService.deleteGame(id: id)
+            await fetchGames()
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Erreur deleteGame: \(error)")
+        }
+        
+        isLoading = false
+    }
 }

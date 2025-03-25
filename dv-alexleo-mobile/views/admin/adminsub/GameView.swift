@@ -34,9 +34,13 @@ struct GameView: View {
     }
     
     private func deleteGame(at offsets: IndexSet) {
-        for index in offsets {
-            let game = viewModel.games[index]
-            //viewModel.deleteGame(id: game.id)
+        Task {
+            for index in offsets {
+                let game = viewModel.games[index]
+                if let gameId = game.id {
+                    await viewModel.deleteGame(id: Int(gameId))
+                }
+            }
         }
     }
 }
@@ -63,6 +67,7 @@ struct GameDetailView: View {
         }
         .padding()
         .navigationTitle("Détails du jeu")
+        
     }
 }
 
@@ -77,7 +82,10 @@ struct CreateGameView: View {
             TextField("Éditeur", text: $editor)
             
             Button("Créer") {
-                //viewModel.createGame(name: name, editor: editor)
+                Task {
+                    await viewModel.createGame(name: name, editor: editor)
+                }
+                
             }
         }
         .navigationTitle("Nouveau jeu")
@@ -96,7 +104,12 @@ struct EditGameView: View {
             TextField("Éditeur", text: $editor)
             
             Button("Enregistrer") {
-                //viewModel.updateGame(id: game.id, name: name, editor: editor)
+                Task{
+                    if let gameId = game.id {
+                        await viewModel.updateGame(id: Int(gameId), name: name, editor: editor)
+                    }
+                }
+                
             }
         }
         .onAppear {
@@ -106,4 +119,3 @@ struct EditGameView: View {
         .navigationTitle("Modifier le jeu")
     }
 }
->>>>>>> bc7062aa02fde12b382aa3bc1245e2ce294a0dcc

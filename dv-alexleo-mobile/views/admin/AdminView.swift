@@ -39,5 +39,3 @@ struct AdminView: View {
         }
     }
 }
-
-struct GameView: View { var body: some View { Text("Game Content") } }
