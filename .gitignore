@@ -1,9 +1,8 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-dv-alexleo-mobile.xcodeproj/project.pbxproj
-## User settings
-xcuserdata/
+dv-alexleo-mobile.xcodeproj/
+## User settings≈
 dv-alexleo-mobile/Assets.xcassets
 ## Obj-C/Swift specific
 *.hmap
