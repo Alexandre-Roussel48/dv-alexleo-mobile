@@ -79,4 +79,3 @@ struct GameRow: View {
     }
 }
 
-

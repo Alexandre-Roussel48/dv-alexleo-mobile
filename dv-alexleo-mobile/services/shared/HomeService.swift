@@ -3,6 +3,7 @@ import Foundation
 
 class HomeService {
     private let baseURL = "\(Environment.baseURL)/session"
+
     
     func fetchCurrentSession(completion: @escaping (Result<Session?, Error>) -> Void) {
         guard let url = URL(string: baseURL) else {
