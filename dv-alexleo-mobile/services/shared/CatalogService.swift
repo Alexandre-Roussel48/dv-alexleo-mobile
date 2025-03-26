@@ -4,10 +4,11 @@ import Combine
 class CatalogService {
     private let baseURL = "\(Environment.baseURL)/catalog"
     
-    func fetchCatalog(query: String?, minPrice: Int?, maxPrice: Int?) -> AnyPublisher<[Realgame], Error> {
+    func fetchCatalog(query: String?, minPrice: Int?, maxPrice: Int?) async throws -> [CatalogItem] {
         var components = URLComponents(string: baseURL)!
+
         var queryItems: [URLQueryItem] = []
-        
+
         if let query = query, !query.isEmpty {
             queryItems.append(URLQueryItem(name: "query", value: query))
         }
@@ -17,16 +18,18 @@ class CatalogService {
         if let maxPrice = maxPrice {
             queryItems.append(URLQueryItem(name: "maxPrice", value: String(maxPrice)))
         }
-        
+
         components.queryItems = queryItems
-        
+
         guard let url = components.url else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+            throw URLError(.badURL)
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: [Realgame].self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let items = try JSONDecoder().decode([CatalogItem].self, from: data)
+        return items
     }
 }

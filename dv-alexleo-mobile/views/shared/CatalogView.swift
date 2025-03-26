@@ -2,8 +2,8 @@
 import SwiftUI
 
 struct CatalogView: View {
-    
     @StateObject var viewModel = CatalogViewModel()
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -15,7 +15,7 @@ struct CatalogView: View {
                         .frame(height:50)
                         .frame(width: 300)
                         .onChange(of: viewModel.priceRange) { _ in
-                            viewModel.fetchCatalog()
+                            viewModel.fetchMatchingCatalog()
                         }
                     Text("De \(Int(viewModel.priceRange.lowerBound))€ à \(Int(viewModel.priceRange.upperBound))€")
                         .font(.subheadline)
@@ -34,10 +34,14 @@ struct CatalogView: View {
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    List(viewModel.games) { game in
-                        GameRow(game: game)
+                    ScrollView {
+                        LazyVStack(spacing: 0) {
+                            ForEach(viewModel.games) { game in
+                                GameRow(game: game)
+                                Divider()
+                            }
+                        }
                     }
-                    .listStyle(.plain)
                 }
                 Spacer()
             }
@@ -50,7 +54,7 @@ struct CatalogView: View {
 }
 
 struct GameRow: View {
-    let game: Realgame
+    let game: CatalogItem
     
     var body: some View {
         HStack {
@@ -58,22 +62,26 @@ struct GameRow: View {
                 Circle()
                     .frame(width: 50, height: 50)
                     .foregroundColor(.black)
-                Text(game.name.prefix(2))
+                Text(game.gameName.prefix(2).uppercased())
                     .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.white)
             }
             
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("\(game.name), \(game.editor)")
-                        .font(.headline)
-                        .lineLimit(1)
-                    Spacer()
-                    Text("\(game.unitPrice)€")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
+            VStack(alignment: .leading, spacing: 4) {
+                Text("\(game.gameName), \(game.gameEditor)")
+                    .font(.headline)
+                    .lineLimit(1)
+                
+                Text("Vendu par \(game.sellerFullName)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
+            
+            Spacer()
+            
+            Text(String(format: "%.2f€", game.unitPrice))
+                .font(.subheadline)
+                .foregroundColor(.secondary)
         }
         .padding(.vertical, 8)
     }

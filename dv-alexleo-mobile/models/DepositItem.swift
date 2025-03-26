@@ -8,7 +8,7 @@
 import Foundation
 
 struct DepositItem: Codable, Identifiable {
-    var id: UUID = UUID()
+    var id: UUID? = UUID()
     let quantity: Int
     let game: Game
     let client: Client
