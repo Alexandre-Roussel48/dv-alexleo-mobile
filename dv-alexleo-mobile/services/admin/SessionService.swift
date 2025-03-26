@@ -73,14 +73,20 @@ class SessionService {
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw URLError(.badServerResponse)
             }
-        print("📡 Sending POST to:", url.absoluteString)
-        print("📤 Request Body:", String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "Invalid JSON")
-        print("📥 Response Status Code:", httpResponse.statusCode)
             switch httpResponse.statusCode {
             case 201:
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 return try decoder.decode(Session.self, from: data)
+                
+            case 204:
+                    return Session(
+                        id : nil,
+                        beginDate: beginDate,
+                        endDate: endDate,
+                        commission: commission,
+                        fees: fees
+                    )
             case 401, 403:
                 throw URLError(.userAuthenticationRequired)
             default:

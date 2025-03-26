@@ -46,9 +46,7 @@ struct SessionDetailView: View {
             
             Button("Supprimer la session") {
                 Task {
-                   
                     await viewModel.deleteSession()
-                    
                 }
             }
             .foregroundColor(.red)
