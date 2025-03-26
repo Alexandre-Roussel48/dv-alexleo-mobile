@@ -18,7 +18,7 @@ class SessionService {
             request.httpMethod = "GET"
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw URLError(.badServerResponse)
@@ -50,7 +50,10 @@ class SessionService {
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            let dateFormatter = ISO8601DateFormatter()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss" // Sans `Z`
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             
             let body: [String: Any] = [
                 "beginDate": dateFormatter.string(from: beginDate),
@@ -58,7 +61,6 @@ class SessionService {
                 "commission": commission,
                 "fees": fees
             ]
-            print("Body complet:", body)
             
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: body)
@@ -71,7 +73,9 @@ class SessionService {
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw URLError(.badServerResponse)
             }
-            
+        print("📡 Sending POST to:", url.absoluteString)
+        print("📤 Request Body:", String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "Invalid JSON")
+        print("📥 Response Status Code:", httpResponse.statusCode)
             switch httpResponse.statusCode {
             case 201:
                 let decoder = JSONDecoder()
@@ -111,6 +115,7 @@ class SessionService {
         urlComponents.queryItems = [URLQueryItem(name: "id", value: String(id))]
         
         guard let url = urlComponents.url else {
+            
             throw URLError(.badURL)
         }
         

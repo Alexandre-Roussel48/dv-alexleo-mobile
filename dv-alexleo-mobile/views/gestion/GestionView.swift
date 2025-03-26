@@ -20,12 +20,12 @@ struct GestionView: View {
                             .tabItem { Label("Deposit", systemImage: "arrow.down.circle") }
                             .tag(1)
 
-                        TreasuryView()
-                            .navigationTitle("Treasury")
-                            .tabItem { Label("Treasury", systemImage: "briefcase") }
+                        BalanceDashboardView()
+                            .navigationTitle("Balance")
+                            .tabItem { Label("Balance", systemImage: "briefcase") }
                             .tag(2)
 
-                        SellersInfoView()
+                        ClientSearchView()
                             .navigationTitle("Sellers Info")
                             .tabItem { Label("Sellers", systemImage: "person.3") }
                             .tag(3)
@@ -52,7 +52,5 @@ struct GestionView: View {
 
 
 struct SalesView: View { var body: some View { Text("Sales Content") } }
-struct TreasuryView: View { var body: some View { Text("Treasury Content") } }
-struct SellersInfoView: View { var body: some View { Text("Sellers Info") } }
 struct StocksView: View { var body: some View { Text("Stocks Content") } }
 struct TransactionsView: View { var body: some View { Text("Transactions Content") } }

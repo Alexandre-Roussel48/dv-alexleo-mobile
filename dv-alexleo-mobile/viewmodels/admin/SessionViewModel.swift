@@ -95,12 +95,13 @@ class SessionViewModel: ObservableObject {
         errorMessage = nil
         
         do {
+            
             // Récupère toutes les sessions
-            allSessions = try await sessionService.fetchSessions()
+            self.allSessions = try await sessionService.fetchSessions()
             
             // Prend la première session comme session actuelle
-            currentSession = allSessions.first
             
+            currentSession = allSessions.first
             guard let sessionToDelete = currentSession,
                   let sessionId = sessionToDelete.id else {
                 errorMessage = "Aucune session à supprimer"
